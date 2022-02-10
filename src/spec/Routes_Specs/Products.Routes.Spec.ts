@@ -59,12 +59,12 @@ describe("Test Case For Products Routes", () => {
     })
 
     it("GET /products/test Should return the status code of 200", async () => {
-        const request = await supertest(app).get("/products/test").set("Authorization", `Bearer ${token}`)
+        const request = await supertest(app).get("/products/cat/test").set("Authorization", `Bearer ${token}`)
         expect(request.status).toEqual(200)
     })
 
     it("GET /products/test Should return the status code of 200 For Non-Users", async () => {
-        const request = await supertest(app).get("/products/test")
+        const request = await supertest(app).get("/products/cat/test")
         expect(request.status).toEqual(200)
     })
 

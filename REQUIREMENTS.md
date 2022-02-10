@@ -58,7 +58,7 @@ e.g req.body json
 * Show products in a category (e.g. category 'Fine Dining')
 
 ```sh
-GET /products/:category_name
+GET /products/cat/:category_name
 ```
 
 * Show top 5 most popular products

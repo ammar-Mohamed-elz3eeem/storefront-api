@@ -6,7 +6,7 @@ import { verification } from "../middleware/verifyUser";
 export const productRotes = Router();
 
 productRotes.get("/", allProducts);
-productRotes.get("/:category", showByCategory);
+productRotes.get("/cat/:category", showByCategory);
 productRotes.post("/add", verification, createNewProduct);
 productRotes.delete("/:id", verification, deleteProductWithId);
 productRotes.get("/:id", showProductWithId);
