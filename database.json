@@ -1,0 +1,19 @@
+{
+    "defaultEnv": {"ENV": "NODE_ENV"},
+
+    "test": {
+        "driver": "postgres",
+        "user": {"ENV": "PG_USER"},
+        "password": {"ENV": "PG_PASSWORD"},
+        "database": {"ENV": "PG_TEST_DATABASE"},
+        "host": {"ENV": "PG_HOST"}
+    }, 
+
+    "dev": {
+        "driver": "postgres",
+        "user": {"ENV": "PG_USER"},
+        "password": {"ENV": "PG_PASSWORD"},
+        "database": {"ENV": "PG_DATABASE"},
+        "host": {"ENV": "PG_HOST"}
+    }
+}

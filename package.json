@@ -1,0 +1,57 @@
+{
+  "name": "storefront-api",
+  "version": "1.0.0",
+  "description": "e-commerce application with the ability to add multivendors",
+  "main": "index.ts",
+  "scripts": {
+    "test": "export NODE_ENV=dev && db-migrate up --env \"dev\"&& jasmine-ts --config=spec/support/jasmine.json && db-migrate reset --env \"dev\"",
+    "start": "ts-node-dev index.ts",
+    "initdb": "node initDB.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammar-Mohamed-elz3eeem/storefront-api.git"
+  },
+  "keywords": [
+    "storefront",
+    "api",
+    "e-commerce",
+    "multivendor"
+  ],
+  "author": "Ammar Massoud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ammar-Mohamed-elz3eeem/storefront-api/issues"
+  },
+  "homepage": "https://github.com/ammar-Mohamed-elz3eeem/storefront-api#readme",
+  "devDependencies": {
+    "@types/jasmine": "^3.6.6",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.13",
+    "@types/pg": "^8.6.4",
+    "@types/supertest": "^2.0.11",
+    "jasmine": "^3.6.2",
+    "jasmine-spec-reporter": "^6.0.0",
+    "jasmine-ts": "^0.3.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
+    "supertest": "^6.2.2",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.3",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^14.3.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1",
+    "pgtools": "^0.3.2"
+  }
+}
