@@ -1,0 +1,32 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+exports.__esModule = true;
+exports.app = void 0;
+var express_1 = __importDefault(require("express"));
+var path_1 = __importDefault(require("path"));
+var errorMiddlerware_1 = require("./src/middleware/errorMiddlerware");
+var Services_Routes_1 = require("./src/Routes/dashboard/Services.Routes");
+var Orders_Routes_1 = require("./src/Routes/Orders.Routes");
+var Products_Route_1 = require("./src/Routes/Products.Route");
+var User_Route_1 = require("./src/Routes/User.Route");
+require("dotenv").config();
+exports.app = (0, express_1["default"])();
+var viewsPath = path_1["default"].resolve(process.cwd(), "views");
+var assets = path_1["default"].resolve(process.cwd(), "assets");
+var bootstrapFolder = path_1["default"].resolve(process.cwd(), "node_modules", "bootstrap", "dist");
+exports.app.use(express_1["default"].static(bootstrapFolder));
+exports.app.use(express_1["default"].static(assets));
+exports.app.use(express_1["default"].json());
+exports.app.use(express_1["default"].urlencoded({ extended: true }));
+exports.app.set("view engine", "ejs");
+exports.app.set("views", viewsPath);
+exports.app.get("/", function (req, res) {
+    res.render("home");
+});
+exports.app.use("/users", User_Route_1.userRoutes);
+exports.app.use("/products", Products_Route_1.productRotes);
+exports.app.use("/orders", Orders_Routes_1.orderRoutes);
+exports.app.use("/dashboard", Services_Routes_1.servicesRouter);
+exports.app.get("*", errorMiddlerware_1.errorMiddlerware);

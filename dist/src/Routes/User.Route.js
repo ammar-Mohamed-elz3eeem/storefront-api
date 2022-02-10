@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+exports.userRoutes = void 0;
+var User_Controller_1 = require("./../Controllers/User.Controller");
+var express_1 = require("express");
+var verifyUser_1 = require("../middleware/verifyUser");
+exports.userRoutes = (0, express_1.Router)();
+exports.userRoutes.get("/", verifyUser_1.verification, User_Controller_1.index);
+exports.userRoutes.post("/", User_Controller_1.create);
+exports.userRoutes.get("/:id", verifyUser_1.verification, User_Controller_1.show);
+exports.userRoutes["delete"]("/:id", verifyUser_1.verification, User_Controller_1.del);

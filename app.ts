@@ -9,18 +9,18 @@ require("dotenv").config();
 
 export const app: express.Application = express();
 
-// const viewsPath: string = path.resolve(process.cwd(),"views");
-// const assets: string = path.resolve(process.cwd(), "assets");
-// const bootstrapFolder = path.resolve(process.cwd(), "node_modules", "bootstrap", "dist");
+const viewsPath: string = path.resolve(process.cwd(),"views");
+const assets: string = path.resolve(process.cwd(), "assets");
+const bootstrapFolder = path.resolve(process.cwd(), "node_modules", "bootstrap", "dist");
 
 
-// app.use(express.static(bootstrapFolder));
-// app.use(express.static(assets));
+app.use(express.static(bootstrapFolder));
+app.use(express.static(assets));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// app.set("view engine", "ejs");
-// app.set("views", viewsPath);
+app.set("view engine", "ejs");
+app.set("views", viewsPath);
 
 app.get("/", (req: Request, res: Response) => {
     res.render("home");

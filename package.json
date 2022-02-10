@@ -6,7 +6,9 @@
   "scripts": {
     "test": "export NODE_ENV=dev && db-migrate up --env \"dev\"&& jasmine-ts --config=spec/support/jasmine.json && db-migrate reset --env \"dev\"",
     "start": "ts-node-dev index.ts",
-    "initdb": "node initDB.js"
+    "initdb": "node initDB.js",
+    "tsc": "tsc",
+    "watch": "tsc-watch --esModuleInterop index.ts --outDir ./dist --onSuccess 'node ./dist/index.js'"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
     "supertest": "^6.2.2",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
+    "tsc-watch": "^4.6.0",
     "typescript": "^4.2.3"
   },
   "dependencies": {
