@@ -4,7 +4,7 @@
   "description": "e-commerce application with the ability to add multivendors",
   "main": "index.ts",
   "scripts": {
-    "test": "export NODE_ENV=dev && db-migrate up --env \"dev\"&& jasmine-ts --config=spec/support/jasmine.json && db-migrate reset --env \"dev\"",
+    "test": "export NODE_ENV=test && db-migrate up --env \"test\"&& jasmine-ts --config=spec/support/jasmine.json && db-migrate reset --env \"test\"",
     "start": "ts-node-dev index.ts",
     "initdb": "node initDB.js",
     "tsc": "tsc",
