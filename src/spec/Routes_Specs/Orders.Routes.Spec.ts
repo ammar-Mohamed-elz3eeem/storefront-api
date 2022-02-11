@@ -96,8 +96,4 @@ describe("Test Case For order Route", () => {
         const request = await supertest(app).delete("/orders/1").send({token}).set("Authorization", `Bearer ${token}`)
         expect(request.status).toEqual(200)
     })
-
-    afterAll(() => {
-
-    })
 })
